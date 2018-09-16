@@ -8,6 +8,8 @@ import HelloWorld from '../components/HelloWorld';
 import Counter from '../components/Counter';
 import Calendar from '../components/Calendar';
 import CuttingAgentsMap from '../components/CuttingAgentsMap';
+import CuttingAgentsAlertDetail from '../components/CuttingAgentAlertsDetail';
+
 
 const router = new VueRouter({
   routes: [
@@ -44,6 +46,13 @@ const router = new VueRouter({
       component: CuttingAgentsMap,
       meta: {
         title: 'Cutting Agent Alerts',
+      },
+    },
+    {
+      path: '/cutting-agent-alerts/:id',
+      component: CuttingAgentsAlertDetail,
+      meta: {
+        title: 'Cutting Agent Alert Details',
       },
     },
     {path: '*', redirect: '/home'},
