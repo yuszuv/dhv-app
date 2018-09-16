@@ -11,7 +11,10 @@
       selectionMode="Single" 
       viewMode="Month"
       transitionMode="Stack" 
-      locale="de-DE"  />
+      locale="de-DE"
+      
+      @inlineEventSelected="onInlineEventSelected"
+      />
 
 
   </Page>
@@ -23,13 +26,19 @@
   const Color = require("color").Color;
   const calendarModule = require("nativescript-ui-calendar");
 
-
   export default {
 
     data() {
       return {
         calendarEvents: []
       }
+    },
+
+    methods:{
+      onInlineEventSelected(args) {
+        console.log(args.object);
+      },
+
     },
 
     created() {
@@ -52,17 +61,5 @@
       this.calendarEvents = events;
     },
 
-    computed: {
-      message () {
-        return this.$store.state.counter.count.toString();
-      },
-      surprise () {
-        return (this.$store.state.counter.count >= 5);
-      },
-    },
-    methods: mapActions([
-      'decrement',
-      'increment',
-    ]),
   };
 </script>
