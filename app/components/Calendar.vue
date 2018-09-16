@@ -22,9 +22,8 @@
 
 <script>
   import { mapActions } from 'vuex';
-  //import Color from 'color';
-  const Color = require("color").Color;
-  const calendarModule = require("nativescript-ui-calendar");
+  import { Color } from 'color';
+  import * as calendarModule from 'nativescript-ui-calendar';
 
   export default {
 
@@ -47,7 +46,7 @@
       let startDate;
       let endDate;
       let event;
-      let colors = [new Color(200, 188, 26, 214), new Color(220, 255, 109, 130), new Color(255, 55, 45, 255), new Color(199, 17, 227, 10), new Color(255, 255, 54, 3)];
+      let colors = [new Color("#f00"), new Color("#007825"), new Color(255, 55, 45, 255), new Color(199, 17, 227, 10), new Color(255, 255, 54, 3)];
       for (let i = 1; i < 10; i++) {
         startDate = new Date(now.getFullYear(), now.getMonth(), i * 2, 1);
         endDate = new Date(now.getFullYear(), now.getMonth(), (i * 2), 3);
