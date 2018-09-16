@@ -1,4 +1,8 @@
+require("nativescript-vue").registerElement("RadCalendar", () => require("nativescript-ui-calendar").RadCalendar);
+
 import Vue from 'nativescript-vue';
+
+const calendarModule = require("nativescript-ui-calendar");
 
 import router from './router';
 
