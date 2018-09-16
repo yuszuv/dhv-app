@@ -7,6 +7,7 @@ import Home from '../components/Home';
 import HelloWorld from '../components/HelloWorld';
 import Counter from '../components/Counter';
 import Calendar from '../components/Calendar';
+import CuttingAgentsMap from '../components/CuttingAgentsMap';
 
 const router = new VueRouter({
   routes: [
@@ -38,10 +39,17 @@ const router = new VueRouter({
         title: 'Calendar',
       },
     },
+    {
+      path: '/cutting-agent-alerts',
+      component: CuttingAgentsMap,
+      meta: {
+        title: 'Cutting Agent Alerts',
+      },
+    },
     {path: '*', redirect: '/home'},
   ],
 });
 
-router.replace('/home');
+router.replace('/cutting-agent-alerts');
 
 export default router;
