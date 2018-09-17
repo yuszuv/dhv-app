@@ -1,15 +1,28 @@
 <template>
   <Page class="page">
     <ActionBar class="action-bar" title="Kalender">
-      <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" @tap="$router.push('/home')"/>
+
+    <NavigationButton text="Go Back" android.systemIcon="ic_menu_back" @tap="$router.push('/home')"/>
+      <!-- <ios> -->
+      <!--   <ActionItem text="Options" ios.position="right" @tap="onOptionsTapped" /> -->
+      <!-- </ios> -->
+      <android>
+        <ActionItem text="Week" android.position="popup" @tap="setViewMode('Week')" />
+        <ActionItem text="Month" android.position="popup" @tap="setViewMode('Month')" />
+        <ActionItem text="Month names" android.position="popup" @tap="setViewMode('MonthNames')" />
+        <ActionItem text="Year" android.position="popup" @tap="setViewMode('Year')" />
+        <ActionItem text="Day" android.position="popup" @tap="setViewMode('Day')" />
+      </android>
+    </ActionBar.actionItems>
+
     </ActionBar>
 
     <RadCalendar id="calendar"
       :eventSource="calendarEvents" 
+      :viewMode="calendarViewMode"
 
       eventsViewMode="Inline" 
       selectionMode="Single" 
-      viewMode="Month"
       transitionMode="Stack" 
       locale="de-DE"
       
@@ -29,13 +42,17 @@
 
     data() {
       return {
-        calendarEvents: []
+        calendarEvents: [],
+        calendarViewMode: 'Month'
       }
     },
 
     methods:{
       onInlineEventSelected(args) {
         console.log(args.object);
+      },
+      setViewMode(mode) {
+        this.calendarViewMode = mode;
       },
 
     },
