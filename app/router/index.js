@@ -51,6 +51,7 @@ const router = new VueRouter({
     {
       path: '/cutting-agent-alerts/:id',
       component: CuttingAgentsAlertDetail,
+      props: true,
       meta: {
         title: 'Cutting Agent Alert Details',
       },

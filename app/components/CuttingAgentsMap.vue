@@ -23,8 +23,10 @@
 
 <script>
 import * as http from 'http';
+import CuttingAgentAlertsDetail from './CuttingAgentAlertsDetail';
 
 export default {
+  components: { CuttingAgentAlertsDetail },
   data () {
     return {
       markers: []
@@ -44,11 +46,18 @@ export default {
       .then(response => response.json(), error => console.log(error))
       .then(data => {
         data.map(json => {
-          this.markers.push({ ...json, onCalloutTap: () =>
-            { this.$router.push(`/cutting-agent-alerts/${json.id}`) } });
+          this.markers.push({ ...json, onCalloutTap: () => {
+            this.$navigateTo(CuttingAgentAlertsDetail, {
+              context: {
+                propsData: {
+                  id: json.id,
+                },
+              }
+            });
+          }
         })
       })
-
+    })
   },
 
 };
