@@ -1,0 +1,26 @@
+{
+  "cutting-agent-alerts": [
+    {
+      "id": 1,
+      "lat": 53.165190,
+      "lng": 12.486542,
+      "title": "16.09.18: Rahmstufe",
+      "subtitle": "In der Rahmstufe geht es drunter und drüber!"
+    },
+    {
+      "id": 2,
+      "lat": 53.131695,
+      "lng": 12.513761,
+      "title": "15.09.18: Burg Goldbeck",
+      "subtitle": "Home of The Polyglot Developer!"
+    },
+    {
+      "id": 3,
+      "lat": 53.163232,
+      "lng": 12.485249,
+      "title": "04.05.18: Marktplatz Wittstock",
+      "subtitle": "Home of The Polyglot Developer!"
+    }
+  ]
+}
+
