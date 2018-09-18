@@ -60,6 +60,6 @@ const router = new VueRouter({
   ],
 });
 
-router.replace('/cutting-agent-alerts');
+router.replace('/home');
 
 export default router;

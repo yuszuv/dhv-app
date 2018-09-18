@@ -29,13 +29,13 @@ export default {
   components: { CuttingAgentAlertsDetail },
   data () {
     return {
-      markers: []
+      map: null
     };
   },
 
   methods: {
     onMapReady(args) {
-      args.map.addMarkers(this.markers);
+      this.map = args.map;
     }
   },
 
@@ -45,8 +45,9 @@ export default {
     })
       .then(response => response.json(), error => console.log(error))
       .then(data => {
+        let markers = [];
         data.map(json => {
-          this.markers.push({ ...json, onCalloutTap: () => {
+          markers.push({ ...json, onCalloutTap: () => {
             this.$navigateTo(CuttingAgentAlertsDetail, {
               context: {
                 propsData: {
@@ -54,10 +55,11 @@ export default {
                 },
               }
             });
-          }
+          }})
         })
+        this.map.addMarkers(markers);
       })
-    })
+    //})
   },
 
 };
