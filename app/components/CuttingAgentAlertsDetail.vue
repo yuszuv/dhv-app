@@ -26,12 +26,6 @@ export default {
     }
   },
 
-  // data() {
-  //   return {
-  //     detail: null,
-  //   }
-  // },
-
   computed: {
     detailUrl() {
       return `https://dhv-api.sternprodukt.de/cutting-agent-alerts/${this.id}`;
