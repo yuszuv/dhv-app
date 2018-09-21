@@ -5,6 +5,7 @@ import Vue from 'nativescript-vue';
 Vue.registerElement("Mapbox", () => require("nativescript-mapbox").MapboxView)
 
 const calendarModule = require("nativescript-ui-calendar");
+require("nativescript-vue").registerElement("CalendarMonthViewStyle", () => require("nativescript-ui-calendar").CalendarMonthViewStyle);
 
 import router from './router';
 
