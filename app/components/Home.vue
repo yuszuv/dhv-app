@@ -3,10 +3,8 @@
     <ActionBar class="action-bar" title="Home"/>
 
     <StackLayout>
-      <Button class="btn btn-primary" @tap="$navigateTo(counterPage)">Counter</Button>
-      <Button class="btn btn-primary" @tap="$router.push('/hello')">Hello World</Button>
-      <Button class="btn btn-primary" @tap="$navigateTo(calendarPage)">Kalender</Button>
-      <Button class="btn btn-primary" @tap="$navigateTo(cuttingAgentsMapPage)">Streckmittel-Melder</Button>
+      <Button class="btn btn-primary btn-green" @tap="$navigateTo(calendarPage)">Kalender</Button>
+      <Button class="btn btn-primary btn-green" @tap="$navigateTo(cuttingAgentsMapPage)">Streckmittel-Melder</Button>
     </StackLayout>
 
   </Page>
@@ -29,3 +27,9 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.btn-green {
+  background-color: #007825;
+}
+</style>
